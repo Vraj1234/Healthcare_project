@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .elective {
+            border: 2px solid blue;
+        }
+        .urgent, .emergency {
+            border: 2px solid red;
+        }
+
+        .table{
+            border-color: black;
+        }
+        
+        #data-table {
+            border: 2px solid black;
+        }
+        .elective td:last-child {
+            border: 2px solid blue;
+        }
+        .urgent td:last-child, .emergency td:last-child {
+            border: 2px solid red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Move</th>
+                <th>CustomerID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>BloodType</th>
+                <th>MedicalCondition</th>
+                <th>DateOfAdmission</th>
+                <th>Doctor</th>
+                <th>InsuranceProvider</th>
+                <th>BillingAmount</th>
+                <th>RoomNumber</th>
+                <th>AdmissionType</th>
+                <th>DischargeDate</th>
+                <th>Medication</th>
+                <th>TestResults</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        var data = [
+  {
+    "CustomerID": 6,
+    "Name": "Patrick Parker",
+    "Age": 41,
+    "Gender": "Male",
+    "BloodType": "AB+",
+    "MedicalCondition": "Arthritis",
+    "DateOfAdmission": "2020-08-20",
+    "Doctor": "Robin Green",
+    "InsuranceProvider": "Aetna",
+    "BillingAmount": 22522.36338,
+    "RoomNumber": 180,
+    "AdmissionType": "Urgent",
+    "DischargeDate": "2020-08-23",
+    "Medication": "Aspirin",
+    "TestResults": "Abnormal",
+    "Status": null
+  },
+  {
+    "CustomerID": 9,
+    "Name": "Ryan Hayes",
+    "Age": 33,
+    "Gender": "Male",
+    "BloodType": "A+",
+    "MedicalCondition": "Diabetes",
+    "DateOfAdmission": "2020-12-17",
+    "Doctor": "Kristin Dunn",
+    "InsuranceProvider": "Aetna",
+    "BillingAmount": 24903.03727,
+    "RoomNumber": 215,
+    "AdmissionType": "Elective",
+    "DischargeDate": "2020-12-22",
+    "Medication": "Aspirin",
+    "TestResults": "Abnormal",
+    "Status": null
+  },
+  {
+    "CustomerID": 11,
+    "Name": "Amy Roberts",
+    "Age": 45,
+    "Gender": "Male",
+    "BloodType": "B-",
+    "MedicalCondition": "Cancer",
+    "DateOfAdmission": "2021-04-13",
+    "Doctor": "Anthony Roberts",
+    "InsuranceProvider": "Aetna",
+    "BillingAmount": 40325.07139,
+    "RoomNumber": 306,
+    "AdmissionType": "Emergency",
+    "DischargeDate": "2021-05-11",
+    "Medication": "Penicillin",
+    "TestResults": "Abnormal",
+    "Status": null
+  }
+];
+
+        var table = document.getElementById('data-table');
+
+        data.forEach(function(item) {
+            var row = document.createElement('tr');
+            row.className = item.AdmissionType.toLowerCase();
+
+            var moveCell = document.createElement('td');
+            var upArrow = document.createElement('button');
+            upArrow.textContent = '↑';
+            upArrow.onclick = function() {
+                var prev = row.previousElementSibling;
+                if (prev) {
+                    table.removeChild(row);
+                    table.insertBefore(row, prev);
+                }
+            };
+            var downArrow = document.createElement('button');
+            downArrow.textContent = '↓';
+            downArrow.onclick = function() {
+                var next = row.nextElementSibling;
+                if (next) {
+                    table.removeChild(row);
+                    table.insertBefore(row, next.nextElementSibling);
+                }
+            };
+            moveCell.appendChild(upArrow);
+            moveCell.appendChild(downArrow);
+            row.appendChild(moveCell);
+
+            var idCell = document.createElement('td');
+            idCell.textContent = item.CustomerID;
+            row.appendChild(idCell);
+
+            var nameCell = document.createElement('td');
+            nameCell.textContent = item.Name;
+            row.appendChild(nameCell);
+
+            // Add more cells as needed
+            var ageCell = document.createElement('td');
+            ageCell.textContent = item.Age;
+            row.appendChild(ageCell);
+
+            var genderCell = document.createElement('td');
+            genderCell.textContent = item.Gender;
+            row.appendChild(genderCell);
+
+            var bloodTypeCell = document.createElement('td');
+            bloodTypeCell.textContent = item.BloodType;
+            row.appendChild(bloodTypeCell);
+
+            var medicalConditionCell = document.createElement('td');
+            medicalConditionCell.textContent = item.MedicalCondition;
+            row.appendChild(medicalConditionCell);
+
+            var dateOfAdmissionCell = document.createElement('td');
+            dateOfAdmissionCell.textContent = item.DateOfAdmission;
+            row.appendChild(dateOfAdmissionCell);
+
+            var doctorCell = document.createElement('td');
+            doctorCell.textContent = item.Doctor;
+            row.appendChild(doctorCell);
+
+            var insuranceProviderCell = document.createElement('td');
+            insuranceProviderCell.textContent = item.InsuranceProvider;
+            row.appendChild(insuranceProviderCell);
+
+            var billingAmountCell = document.createElement('td');
+            billingAmountCell.textContent = item.BillingAmount;
+            row.appendChild(billingAmountCell);
+
+            var roomNumberCell = document.createElement('td');
+            roomNumberCell.textContent = item.RoomNumber;
+            row.appendChild(roomNumberCell);
+
+            var admissionTypeCell = document.createElement('td');
+            admissionTypeCell.textContent = item.AdmissionType;
+            row.appendChild(admissionTypeCell);
+
+            var dischargeDateCell = document.createElement('td');
+            dischargeDateCell.textContent = item.DischargeDate;
+            row.appendChild(dischargeDateCell);
+
+            var medicationCell = document.createElement('td');
+            medicationCell.textContent = item.Medication;
+            row.appendChild(medicationCell);
+
+            var testResultsCell = document.createElement('td');
+            testResultsCell.textContent = item.TestResults;
+            row.appendChild(testResultsCell);
+
+            var statusCell = document.createElement('td');
+            statusCell.textContent = item.Status;
+            row.appendChild(statusCell);
+
+            table.appendChild(row);
+        });
+    </script>
+</body>
+</html>

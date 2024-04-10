@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Login Form | CodingLab </title>
+    <link rel="stylesheet" href="style_new_patient.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
+        <div class="title" style="text-align: center;"><a href="./index.html" style="margin-right: 10%; color: black;"><- Go back </a><span style="color: black;">Create New Record</span><span style="text-align: right; margin-left: 10%;"> Next -></span></div>
+        <div class="input-row">
+            <div class="input-box underline">
+                <input type="number" name="customerID" placeholder="Enter CustomerID" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="text" name="name" placeholder="Enter Name" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="number" name="age" placeholder="Enter Age" required>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <div class="input-row">
+            <div class="input-box underline">
+                <select name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="text" name="bloodType" placeholder="Enter Blood Type" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="text" name="medicalCondition" placeholder="Enter Medical Condition" required>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <div class="input-row">
+            <div class="input-box underline">
+                <input type="date" name="dateOfAdmission" placeholder="Enter Date of Admission" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="text" name="doctor" placeholder="Enter Doctor's Name" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="text" name="insuranceProvider" placeholder="Enter Insurance Provider" required>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <div class="input-row">
+            <div class="input-box underline">
+                <input type="number" step="0.01" name="billingAmount" placeholder="Enter Billing Amount" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="number" name="roomNumber" placeholder="Enter Room Number" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="text" name="admissionType" placeholder="Enter Admission Type" required>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <div class="input-row">
+            <div class="input-box underline">
+                <input type="date" name="dischargeDate" placeholder="Enter Discharge Date" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="text" name="medication" placeholder="Enter Medication" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-box underline">
+                <input type="text" name="testResults" placeholder="Enter Test Results" required>
+                <div class="underline"></div>
+            </div>
+            <!-- <div class="input-box underline">
+                <input type="text" name="status" placeholder="Enter Status" required>
+                <div class="underline"></div>
+            </div> -->
+        </div>
+        <div class="input-box button">
+            <input style="margin-top: 2px;" type="button" name="" value="Continue" onclick="window.location.href='new.html'">
+        </div>
+      </form>
+        
+    </div>
+  </body>
+</html>

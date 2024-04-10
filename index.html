@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Hospital records </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
+        <div class="title">RECORD MANAGEMENT</div>
+        <div class="input-box button">
+            <input type="button" name="" value="New User" onclick="window.location.href='new.html'">
+        </div>
+        <div class="input-box button">
+            <input type="button" name="" value="Existing User" onclick="window.open('new.html', 'New record')">
+        </div>
+        <script>
+            function redirectToCreatePage() {
+                window.location.href = "./create_record.html";
+            }
+        </script>
+      </form>
+    </div>
+  </body>
+</html>
